@@ -39,6 +39,29 @@ router.post('/', (req, res) => {
 
 });
 // PUT
+router.put('/:id', (req, res) => {
+  const updateItem = req.params.id;
+  const itemData = req.body;
+  let queryText = '';
+  console.log(itemData);
+  console.log('itemId', updateItem)
+
+  if(itemData === false) {
+    queryText = 'UPDATE "todo" SET "completed" = true WHERE "id" = $1;';
+  } else {
+    queryText = 'UPDATE "todo" SET "completed" = false WHERE "id" = $1;';
+  }
+  console.log(queryText);
+  pool
+    .query(queryText, [updateItem])
+    .then((result) => {
+      res.send('Task UPDATED:').status(201);
+    })
+    .catch((error) => {
+      console.error('ERROR in PUT:', error);
+      res.sendStatus(500);
+    });
+});
 
 // DELETE
 router.delete('/:id', (req, res) => {
