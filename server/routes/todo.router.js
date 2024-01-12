@@ -40,10 +40,10 @@ router.post('/', (req, res) => {
 });
 // PUT
 router.put('/:id', (req, res) => {
-  const updateItem = req.params.id;
-  const itemData = req.body;
+  const updateItem = parseInt(req.params.id);
+  const itemData = req.body.completed;
   let queryText = '';
-  console.log(itemData);
+  console.log('Item Data:', itemData);
   console.log('itemId', updateItem)
 
   if(itemData === false) {
@@ -66,7 +66,7 @@ router.put('/:id', (req, res) => {
 // DELETE
 router.delete('/:id', (req, res) => {
   console.log('In DELETE route');
-  const deleteId = req.params.id;
+  const deleteId = parseInt(req.params.id);
   const queryText = `DELETE FROM "todo" WHERE id = ${deleteId};`;
 
   pool
