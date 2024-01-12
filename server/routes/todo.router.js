@@ -18,7 +18,26 @@ router.get('/', (req, res) => {
   });
 });
 // POST
+router.post('/', (req, res) => {
+  const newTask = req.body;
+  const queryArgs = [newTask.task, newTask.description];
+  const queryText = `
+  INSERT INTO "todo" ("task", "description")
+  VALUES($1, $2);`;
+  console.log('In POST route:');
+  console.log(queryText, queryArgs);
 
+  pool  
+    .query(queryText, queryArgs)
+    .then((result) => {
+      res.sendStatus(201);
+    })
+    .catch((error) => {
+      console.error('Error in POST', error)
+      res.sendStatus(500);
+    });
+
+});
 // PUT
 
 // DELETE
