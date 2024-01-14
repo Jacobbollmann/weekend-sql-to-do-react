@@ -11,6 +11,7 @@ function App () {
     taskPromise
       .then((response) => {
         console.log('DATA FROM GET:', response.data);
+        setTaskList(response.data);
       })
       .catch((error) => {
         console.error('SOMETING WRONG IN GET:', error);
@@ -24,9 +25,21 @@ function App () {
   }, []);
 
   return (
-    <div className='App'>
-      <h1>JUST DO IT</h1>
-    </div>
+    <>
+      <div className='App'>
+        <h1>JUST DO IT</h1>
+      </div>
+
+      {taskList.map((taskData) => {
+        return(
+          <div key={taskData.id}>
+            <h3>{taskData.task}</h3>
+            <p>{taskData.description}</p>
+          </div>
+        );
+      })}
+      
+    </>
   );
 
 }
