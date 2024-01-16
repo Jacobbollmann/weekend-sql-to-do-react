@@ -1,5 +1,6 @@
 import  { useState, useEffect } from 'react';
 import { fetchTasks } from '../App/taskApi/taskApi';
+import AddTaskForm from '../TaskForm/TaskForm';
 
 const FetchAndRender = () => {
 
@@ -26,6 +27,8 @@ const FetchAndRender = () => {
   
   return (
     <div>
+      <AddTaskForm taskRefresh={refreshTask}/>
+
       {taskList.map((taskData) => {
         return (
 
