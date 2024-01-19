@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { postTask } from '../App/taskApi/taskApi';
+import { postTask } from '../../taskApi/taskApi';
 
 function AddTaskForm(props) {
   const [nameValue, setNameValue] = useState('');

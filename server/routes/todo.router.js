@@ -41,17 +41,10 @@ router.post('/', (req, res) => {
 // PUT
 router.put('/:id', (req, res) => {
   const updateItem = parseInt(req.params.id);
-  const itemData = req.body.completed;
-  let queryText = '';
+  let queryText = 'UPDATE "todo" SET "completed" = NOT "completed" WHERE "id" = $1;';
   console.log('Item Data:', itemData);
   console.log('itemId', updateItem)
 
-  if(itemData === false) {
-    queryText = 'UPDATE "todo" SET "completed" = true WHERE "id" = $1;';
-  } else {
-    queryText = 'UPDATE "todo" SET "completed" = false WHERE "id" = $1;';
-  }
-  console.log(queryText);
   pool
     .query(queryText, [updateItem])
     .then((result) => {
