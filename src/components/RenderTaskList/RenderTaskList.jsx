@@ -1,5 +1,5 @@
-
 import AddTaskForm from '../TaskForm/TaskForm';
+import TaskItem from '../TaskItem/TaskItem';
 
 const FetchAndRender = ({taskList, refreshTask}) => {
 
@@ -10,10 +10,7 @@ const FetchAndRender = ({taskList, refreshTask}) => {
       {taskList.map((taskData) => {
         return (
 
-          <div key={taskData.id}>
-          <h3>{taskData.task}</h3>
-          <p>{taskData.description}</p>
-          </div>
+          <TaskItem key={taskData.id} taskData={taskData} refreshTask={refreshTask} />
 
         );
       })}

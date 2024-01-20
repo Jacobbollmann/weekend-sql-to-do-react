@@ -42,7 +42,6 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   const updateItem = parseInt(req.params.id);
   let queryText = 'UPDATE "todo" SET "completed" = NOT "completed" WHERE "id" = $1;';
-  console.log('Item Data:', itemData);
   console.log('itemId', updateItem)
 
   pool
