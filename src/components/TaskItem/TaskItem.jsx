@@ -29,6 +29,7 @@ function TaskItem({taskData, refreshTask}) {
     <div>
       <h3>{taskData.task}</h3>
       <p>{taskData.description}</p>
+      <p>{taskData.completed ? 'You did it!' : ''}</p>
       <button onClick={() => {handleTaskDelete(taskData.id)}}>Delete</button>
       <button onClick={() => {handleTaskUpdate(taskData.id)}}>Completed</button>
     </div>
