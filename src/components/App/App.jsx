@@ -30,11 +30,11 @@ function App () {
   }, []);
 
   return (
-    <>
+    <div className='App'>
       <Header />
 
-      <FetchAndRender taskList={taskList} refreshTask={refreshTask}/>     
-    </>
+      <FetchAndRender className='render-container' taskList={taskList} refreshTask={refreshTask}/>     
+    </div>
   );
 
 }

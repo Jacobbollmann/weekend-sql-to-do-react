@@ -1,23 +1,48 @@
+body {
+  background-color: #e0e1dd;
+}
 .App {
   text-align: center;
+  margin: 10px;
+  padding: 10px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0d1b2a;
+  height: 100px;
   padding: 20px;
   color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 3em;
 }
 
 .App-intro {
   font-size: large;
 }
 
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 20px;
+  background-color: #669bbc;
+}
+
+input{
+  margin: 10px 10px 10px 0px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.completed {
+  text-decoration: line-through;
 }

@@ -1,4 +1,7 @@
 import { deleteTask, updateTask } from "../../taskApi/taskApi";
+import Grid from '@mui/material/Grid';
+import Box from '@mui/system/Box';
+
 
 function TaskItem({taskData, refreshTask}) {
   const handleTaskDelete = (id) => {
@@ -25,14 +28,25 @@ function TaskItem({taskData, refreshTask}) {
       });
   }   
   
-  return (
-    <div>
-      <h3>{taskData.task}</h3>
-      <p>{taskData.description}</p>
-      <p>{taskData.completed ? 'You did it!' : ''}</p>
-      <button onClick={() => {handleTaskDelete(taskData.id)}}>Delete</button>
-      <button onClick={() => {handleTaskUpdate(taskData.id)}}>Completed</button>
-    </div>
+  return (           
+    <Grid 
+      item 
+      xs={12} sm={6} md={4}
+      >
+      <Box 
+        border='1px solid black'
+        marginTop={2}
+        backgroundColor={!taskData.completed ? 'white' : 'rgba(0, 255, 0, 0.2)'}
+        
+
+      >
+        <h3 className={taskData.completed ? 'completed' : 'normal'}>{taskData.task}</h3>
+        <p className={taskData.completed ? 'completed' : 'normal'}>{taskData.description}</p>
+        <p>{taskData.completed ? 'You did it!' : ''}</p>
+        <button onClick={() => {handleTaskUpdate(taskData.id)}}>Completed</button>
+        <button onClick={() => {handleTaskDelete(taskData.id)}}>Delete</button>
+      </Box>
+    </Grid>       
   );
 }
 

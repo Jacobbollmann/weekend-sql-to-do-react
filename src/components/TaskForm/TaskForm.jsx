@@ -38,7 +38,7 @@ function AddTaskForm(props) {
   };
     
   return (
-    <div>
+    <div className='form'>
       <form onSubmit={submitNewtask}>
         <label>
           <span>Task: </span>
