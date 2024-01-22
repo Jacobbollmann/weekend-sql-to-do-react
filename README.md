@@ -1,9 +1,47 @@
-# Project Name
+# To Do App
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
 
-## Description
+## Built With
 
-Your project description goes here. What problem did you solve? How did you solve it?
+- Javascript
+- React
+- Node
+- Express
+- PostgreSQL
+- CSS
+- Material UI
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/en/)
+- PostgreSQL
+
+
+### Installing
+
+Steps to get the development environment running.
+
+1. Download this project.
+2. `npm install`
+3. `npm start`
+
+## Screen Shot
+![To Do App](/public/images/Todo.png)
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Authors
+
+* Name of author(s)
+
+
+## Acknowledgments
+
+* Hat tip to anyone who's code was used
