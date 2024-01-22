@@ -31,6 +31,7 @@ body {
   justify-content: center;
   height: 30px;
   padding: 20px;
+  margin-bottom: 16px;
   background-color: #669bbc;
 }
 
@@ -45,4 +46,12 @@ input{
 
 .completed {
   text-decoration: line-through;
+}
+
+.task-buttons{
+  margin: 2px;
+}
+
+.delete{
+  background-color: rgb(235, 108, 108);
 }

@@ -35,16 +35,14 @@ function TaskItem({taskData, refreshTask}) {
       >
       <Box 
         border='1px solid black'
-        marginTop={2}
         backgroundColor={!taskData.completed ? 'white' : 'rgba(0, 255, 0, 0.2)'}
-        
-
+        padding={2}
       >
         <h3 className={taskData.completed ? 'completed' : 'normal'}>{taskData.task}</h3>
         <p className={taskData.completed ? 'completed' : 'normal'}>{taskData.description}</p>
         <p>{taskData.completed ? 'You did it!' : ''}</p>
-        <button onClick={() => {handleTaskUpdate(taskData.id)}}>Completed</button>
-        <button onClick={() => {handleTaskDelete(taskData.id)}}>Delete</button>
+        <button className="task-buttons" onClick={() => {handleTaskUpdate(taskData.id)}}>Completed</button>
+        <button className="task-buttons delete" onClick={() => {handleTaskDelete(taskData.id)}}>Delete</button>
       </Box>
     </Grid>       
   );
