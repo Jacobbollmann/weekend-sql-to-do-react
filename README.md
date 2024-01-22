@@ -37,11 +37,6 @@ Steps to get the development environment running.
 
 Add additional notes about how to deploy this on a live system
 
-## Authors
-
-* Name of author(s)
-
-
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used
